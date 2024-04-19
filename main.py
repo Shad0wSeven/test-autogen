@@ -1,6 +1,7 @@
 from autogen import AssistantAgent, UserProxyAgent
+import os
 
-llm_config = {"model": "gpt-4", "api_key": "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"}
+llm_config = {"model": "gpt-4", "api_key": os.environ["OPENAI_API_KEY"]}
 assistant = AssistantAgent("assistant", llm_config=llm_config)
 user_proxy = UserProxyAgent("user_proxy", code_execution_config=False)
 
